@@ -1,0 +1,31 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+  
+  .table {
+    margin: auto;
+  }
+  header{
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 50%;
+  }
+
+  .imagLogo{
+    width: 100px;
+  }
+
+  /* .floaty {
+    float: left;
+  } */
+  
