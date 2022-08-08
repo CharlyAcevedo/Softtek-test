@@ -1,8 +1,8 @@
 //----- ----- ACIONES DE LLAMADO A LOS DATOS ----- -----//
 export const GET_ALL_DATA = 'GET_ALL_DATA';
 
-//----- ----- ACIONES DE FILTRADO ----- -----//
-export const FILTER_BY_SESION = 'FILTER_BY_SESION';
+//----- ----- ACIONES DE BUSQUEDA ----- -----//
+export const SEARCH_CHARACTER = 'SEARCH_CHARACTER';
 
 //----- ----- ACIONES DE ORDENAMIENTO ----- -----//
 export const ORDER_BY_FIELD = 'ORDER_BY_FIELD';

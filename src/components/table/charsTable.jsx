@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllData } from '../../redux/actions'
+import { getAllData } from '../../redux/actions';
+import noImage from '../../assets/no image.jpg'
 
 export default function CharsTable () {
 
   const dispatch = useDispatch();
-  const [finish, setFinish] = useState(50)
+  const [finish, setFinish] = useState(826)
+  const allCharacters = useSelector(state => state.pageToShow)
 
   useEffect(() => {
     let payload = [];
@@ -14,9 +16,10 @@ export default function CharsTable () {
     }
     dispatch(getAllData(payload))
   },[])
-  const allCharacters = useSelector(state => state.pageToShow)
 
   return (
+    <>
+    
     <table className="table">
       <thead>
         <tr>
@@ -30,9 +33,9 @@ export default function CharsTable () {
            return ( <tr key={chara.id} id={chara.id}>
               <td>{chara.name}</td>
               <td>
-                <img src={chara.image} />
+                {chara.image ? <img src={chara.image} /> : <img src={noImage} alt='no image available' />}
               </td>
-              <td>{chara.location.name}</td>
+              <td>{chara.location}</td>
             </tr>);
           }) : <tr>
             <td>
@@ -42,5 +45,6 @@ export default function CharsTable () {
        }
       </tbody>
     </table>
+    </>
   );
 };

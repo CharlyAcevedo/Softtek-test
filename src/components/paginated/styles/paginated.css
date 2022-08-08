@@ -5,14 +5,13 @@
     text-align: center;
     justify-content:space-between;
     flex-direction: row;
-    background: #fdf9f1ad;
-    background: linear-gradient(180deg, #fdfaf2ed 0%, #fff2d7 44%, #fffcf6e1 100%);
     bottom: 1vh;
-    width: 900%;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     height: 5vh;
     padding-left: 2em;
     padding-right: 2em;
+    /* margin: 0% 10% 0% 10%; */
     line-height: 4vh;
     font-size: 2vh;
     color: #41381c;
@@ -59,25 +58,25 @@
 }
 
 .btn_primary{
-    background: linear-gradient(45deg, #d1bc8eed 0%, #f1dbac 44%, #d1bc8ee1 100%);
+    background: linear-gradient(45deg, #95adbded 0%, #ffffff 44%, #95adbded 100%);
     border-radius: 5px;
-    min-width: 1.8em;
+    min-width: 20px;
     border: none;
     height: 3.2vh;
     margin: 0 .1em;
 }
 
 .btn_primary:hover{
-    background: linear-gradient(120deg, #e7d2a3ed 0%, #fae8c1 44%, #e7d2a3ed 100%);
+    background: linear-gradient(120deg, #7ca8c5ed 0%, #dbefff 44%, #7ca8c5ed 100%);
     box-shadow: 1px 1px 1px #41381c;
 
 }
 
 .btn_primary_active{
-    background: linear-gradient(60deg, #d1bc8eed 0%, #fae8c1 44%, #d1bc8ee1 100%);
+    background: linear-gradient(60deg,  #95adbded 0%, #ffffff 44%, #95adbded 100%);
     box-shadow: 2px 2px 2px #41381c;
     border-radius: 5px;
-    min-width: 1.8em;
+    min-width: 20px;
     border: none;
     height: 3.2vh;
     margin: 0 .2em;    
@@ -85,7 +84,14 @@
 
 .btn_prev_next{
     margin-top: .2em;
-    min-width: 2em;
+    min-width: 20px;
+    width: 20px;
+}
+
+.btn_prev_next img{
+    width: 200%;
+    margin-top: .2em;
+    margin-left: -.2em;
 }
 
 .select_page{
@@ -97,14 +103,32 @@
     border-style: inset;
 }
 
-@media (max-width: 700px) {
+.label_pagOf_container{
+    margin-left: 10%;
+}
+
+.toShow_selector{
+    margin-right: 14%;
+}
+
+
+@media (max-width: 760px) {
     .btn_number{
         display: none;
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 600px) {
     .toShow_selector{
         display: none;
+    }
+    /* .label_pagOf_container{
+        display: none;
+    } */
+    .general_container{
+        justify-content:space-evenly;
+        margin-left: 0%;
+        padding-left: 0;
+        margin-right: 25%;
     }
 }

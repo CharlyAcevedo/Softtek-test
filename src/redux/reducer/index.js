@@ -1,11 +1,12 @@
 import {
   GET_ALL_DATA,
-  FILTER_BY_SESION,
-  ORDER_BY_FIELD,
+  SEARCH_CHARACTER,
   SET_CURRENT_PAGE,
   SET_PAGE_NUMBER,
   SET_CURRENT_LIMIT,
 } from "../actions/actionTypes";
+
+import { mapingChars, searchData } from './controlers.js'
 
 const initialState = {
   allData: [],
@@ -25,32 +26,29 @@ const rootReducer = (state = initialState, { type, payload }) => {
           errors: payload.error,
         };
       };
-    const newPageData = payload.slice(0, state.currentLimit)
+    const dataMaped = mapingChars(payload)
+    const newPageData = dataMaped.slice(0, state.currentLimit)
     return {
       ...state,
-      allData: [...payload],
-      dataToShow: [...payload],
+      allData: [...dataMaped],
+      dataToShow: [...dataMaped],
       pageToShow: newPageData
     };
-    case FILTER_BY_SESION:
+    case SEARCH_CHARACTER:
       if (payload.error) {
         return {
           ...state,
           errors: payload.error,
         };
       };
+      console.log("este es el payload del reducer", payload)
+    const charsFound = searchData(state.allData, payload);
+    console.log("esto regresa searchData", charsFound)
+    const newPageSearch = charsFound.slice(0, state.currentLimit)
     return {
       ...state,
-    };
-    case ORDER_BY_FIELD:
-      if (payload.error) {
-        return {
-          ...state,
-          errors: payload.error,
-        };
-      };
-    return {
-      ...state,
+      dataToShow: [...charsFound],
+      pageToShow: newPageSearch
     };
     case SET_CURRENT_PAGE:
       if (payload.error) {

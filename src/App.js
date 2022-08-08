@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import CharsTable from './components/table/CharsTable';
+import HeaderSofttek from './components/header/Header';
+import Paginated from "./components/paginated/Paginated";
 import "./styles.css";
-import CharsTable from './components/table/charsTable';
-import HeaderSofttek from './components/header/header';
-import Paginated from "./components/paginated/paginated";
+import 'normalize.css';
 
 export default function App() {
   return (

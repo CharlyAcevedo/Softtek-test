@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
     GET_ALL_DATA,
+    SEARCH_CHARACTER,
     SET_CURRENT_PAGE,
     SET_PAGE_NUMBER,
     SET_CURRENT_LIMIT
@@ -9,7 +10,7 @@ import {
 export function getAllData(payload) {
     return async (dispatch) => {
       try {
-        console.log(payload)
+        // console.log(payload)
         let response = "";
         if(!payload){
           response = await axios.get("https://rickandmortyapi.com/api/character");
@@ -24,7 +25,7 @@ export function getAllData(payload) {
             payload: response.data,
           });
         }
-        console.log(response)
+        // console.log(response)
       } catch (error) {
         dispatch({
           type: GET_ALL_DATA,
@@ -33,6 +34,23 @@ export function getAllData(payload) {
       };
     };
   };
+
+export function searchCharacter(payload) {
+  console.log("esto recibe la action", payload)
+  return (dispatch) => {
+    try {
+      dispatch({
+        type: SEARCH_CHARACTER,
+        payload: payload,
+      });
+    } catch (error) {
+      dispatch({
+        type: SEARCH_CHARACTER,
+        payload: { error: error.message },
+      });
+    };
+  };
+}
   
 export function setCurrentPage(payload) {
   return (dispatch) => {

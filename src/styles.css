@@ -1,6 +1,7 @@
-.App {
+  .App {
     font-family: sans-serif;
     text-align: center;
+    margin: auto;
   }
   
   table,
@@ -8,24 +9,88 @@
   td {
     border: 1px solid black;
   }
+
+  th{
+    border: 5px outset gray;
+  }
   
   .table {
+    width: 80%;
+    max-width: 1200px;
     margin: auto;
+    padding-bottom: 40px;
   }
+
+  img{
+    width: 300px;
+    max-width: 300px;    
+  }  
+
   header{
     position: relative;
     margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    max-width: 50%;
+    max-width: 85%;
   }
 
   .imagLogo{
-    width: 100px;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    width: 70px;
   }
 
-  /* .floaty {
-    float: left;
-  } */
+  .input-wrapper {
+    position: relative;
+    width: 271px;
+    height: 2rem;
+    margin:auto;
+    margin-bottom: .5em;
+  }
+
+  .input {
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-style: inset;
+    border-width: 3px;
+    color: #191919;
+    padding: 5px 5px 5px 35px;
+    width: 100%;
+  }
+
+  .input-icon {
+    color: #191919;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  tr:hover{
+    background-color: #caddd7;
+  }
+
   
+  @media (max-width: 760px) {
+    .table {
+      width: 90%;
+      max-width: 730px;
+      margin: auto;
+    }
+  
+    img{
+      width: 100%;    
+    }
+
+    .softtek{
+      font-size: x-large;
+    }
+  }
+
+  @media (max-width: 380px) {
+
+  }
